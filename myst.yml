@@ -1,22 +1,9 @@
 version: 1
 project:
-  title: Mohammad Alamgir Khan
-  description: SAR/InSAR, GeoAI and geospatial modelling for humanitarian and environmental Earth observation
-  keywords:
-    - SAR
-    - InSAR
-    - Sentinel-1
-    - Remote Sensing
-    - GIS
-    - GeoAI
-    - Change Detection
-  authors:
-    - name: Mohammad Alamgir Khan
-      affiliations:
-        - LIESMARS, Wuhan University
-      github: AlamgirKhan-GIS
+  title: Website Title
+  # authors:
+  #   - name: Author Name
   copyright: '2026'
-  github: AlamgirKhan-GIS/AlamgirKhan-GIS.github.io
   exclude:
     - _build
     - Thumbs.db
@@ -29,21 +16,27 @@ project:
     - CONDUCT.md
     - CONTRIBUTING.md
     - README.md
-    - LICENSE
+  github: opengeos/myst-website-template
+  thebe:
+    binder:
+      repo: opengeos/myst-website-template
+      provider: github
+      url: https://mybinder.org
+      ref: main
   bibliography:
     - pages/references.bib
   toc:
     - file: index.md
-    - file: pages/about.md
-    - file: pages/research/index.md
+    - title: Preface
       children:
-        - file: pages/research/gaza-ccd.md
-        - file: pages/research/shisper-glacier.md
-    - file: pages/figures.md
-    - file: pages/presentations.md
-    - file: pages/skills.md
-    - file: pages/certificates.md
-    - file: pages/cv.md
+        - file: pages/preface.md
+    - title: Getting Started
+      children:
+        - file: pages/part01/getting-started.md
+        - file: pages/part01/installation.md
+    - title: Examples
+      children:
+        - file: pages/part02/first-example.md
     - file: blog.md
       children:
         - file: tags/myst-markdown.md
@@ -58,9 +51,10 @@ site:
     favicon: fav.ico
     folders: true
     style: custom.css
+    # analytics_google: G-XXX
   actions:
     - title: RSS
-      url: https://alamgirkhan-gis.github.io/rss.xml
+      url: https://opengeos.org/myst-website-template/rss.xml
   template: book-theme
   parts:
     primary_sidebar_footer: ''
