@@ -4,10 +4,17 @@ subtitle: SAR/InSAR · GeoAI · Geospatial Modelling for Humanitarian and Enviro
 short_title: Home
 ---
 
+```{image} assets/images/profile.jpg
+:alt: Mohammad Alamgir Khan
+:width: 220px
+:align: center
+:class: profile-photo
+```
+
 {button}`About Me <pages/about.md>` {button}`Research <pages/research/index.md>` {button}`Skills <pages/skills.md>` {button}`CV <pages/cv.md>`
 
 :::{tip} 📢 Latest News
-**Oct 2026:** My poster on Sentinel-1 coherence change detection for conflict-induced urban damage in Gaza was accepted at **IGWG 2026**, Wuhan University.
+**Oct 2026:** My poster on Sentinel-1 coherence change detection for conflict-induced urban damage in Gaza was accepted at **IGWG 2026**, Wuhan University. [View poster →](pages/presentations.md)
 :::
 
 ## 👋 About Me
