@@ -1,10 +1,9 @@
+/* ==========================================================
+   Template settings (kept from the original file)
+   ========================================================== */
+
 .myst-fm-downloads-dropdown {
   display: none !important;
-}
-
-table td:first-child,
-table th:first-child {
-  white-space: nowrap;
 }
 
 #giscus-comments {
@@ -15,27 +14,6 @@ table th:first-child {
 .giscus,
 .giscus-frame {
   width: 100% !important;
-}
-
-#featured-projects + .myst-grid .myst-card-footer,
-#featured-projects + .myst-grid .myst-card-title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-left: 1rem !important;
-  padding-right: 1rem !important;
-  text-align: center !important;
-  white-space: nowrap;
-}
-
-#featured-projects + .myst-grid .myst-card-footer > *,
-#featured-projects + .myst-grid .myst-card-title > * {
-  text-align: center !important;
-}
-
-#featured-projects + .myst-grid .myst-card-footer p,
-#featured-projects + .myst-grid .myst-card-footer strong {
-  margin: 0 auto;
 }
 
 #posts ~ .myst-grid .myst-card-header,
@@ -54,12 +32,158 @@ table th:first-child {
   border-radius: 4px;
 }
 
-/* ---------- Profile photo ---------- */
+/* ==========================================================
+   Featured project cards
+   (titles may wrap: long titles overflowed on phones)
+   ========================================================== */
+
+#featured-projects + .myst-grid .myst-card-title,
+#featured-projects + .myst-grid .myst-card-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.35rem;
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+  text-align: center !important;
+  white-space: normal;
+}
+
+#featured-projects + .myst-grid .myst-card-footer p,
+#featured-projects + .myst-grid .myst-card-footer strong {
+  margin: 0 auto;
+}
+
+/* ==========================================================
+   Profile photo
+   ========================================================== */
+
 img.profile-photo,
 .profile-photo img {
+  display: block;
+  width: 220px;
+  max-width: 60vw;
+  height: auto;
+  margin: 0.5rem auto 1.5rem auto;
   border-radius: 50%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
+  object-position: center top;
   border: 4px solid #1f4e79;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
+}
+
+/* ==========================================================
+   General: nothing wider than the screen
+   ========================================================== */
+
+article img,
+article figure,
+article video,
+article iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+article p,
+article li,
+article a {
+  overflow-wrap: break-word;
+}
+
+/* Wide tables scroll sideways instead of breaking the page */
+article table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+table td:first-child,
+table th:first-child {
+  white-space: nowrap;
+}
+
+/* Tool tags (Sentinel-1, Python...) wrap onto new lines */
+.myst-card code {
+  white-space: normal;
+  display: inline-block;
+  margin: 0.15rem 0.1rem;
+}
+
+/* ==========================================================
+   Phones (screens narrower than 640 px)
+   ========================================================== */
+
+@media (max-width: 640px) {
+  /* Comfortable page margins */
+  article {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+
+  /* Page title and subtitle scale down */
+  h1 {
+    font-size: 1.9rem !important;
+    line-height: 1.2 !important;
+  }
+
+  h2 {
+    font-size: 1.4rem !important;
+    margin-top: 1.75rem !important;
+  }
+
+  h3 {
+    font-size: 1.15rem !important;
+  }
+
+  /* Smaller photo */
+  img.profile-photo,
+  .profile-photo img {
+    width: 160px;
+    margin-bottom: 1rem;
+  }
+
+  /* Body text a little tighter */
+  article p,
+  article li {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  /* Cards: less padding, one per row */
+  .myst-card {
+    margin-bottom: 0.75rem;
+  }
+
+  .myst-card-body,
+  .myst-card-title,
+  .myst-card-footer {
+    padding-left: 0.85rem !important;
+    padding-right: 0.85rem !important;
+  }
+
+  /* Buttons wrap neatly and are easy to tap */
+  article a[class*="button"],
+  article .button {
+    display: inline-block;
+    margin: 0.25rem 0.2rem;
+    padding: 0.5rem 0.9rem;
+  }
+
+  /* Author / affiliation line stacks */
+  .myst-fm-block {
+    gap: 0.25rem !important;
+  }
+
+  /* Poster and figures use the full width */
+  figure,
+  figure img {
+    width: 100% !important;
+  }
+
+  figcaption {
+    font-size: 0.9rem;
+  }
 }
